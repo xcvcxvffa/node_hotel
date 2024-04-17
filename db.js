@@ -4,7 +4,11 @@ require("dotenv").config();
 const dbUrl = process.env.MONGODB_URI;
 
 const db = mongoose
-  .connect(dbUrl)
+  .connect(dbUrl, {
+    bufferCommands: false, 
+    useNewUrlParser: true,
+  })
+
   .then(() => {
     console.log("Connected to MongoDB");
   })
