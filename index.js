@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
-const port = 1000;
 const db = require("./db.js");
 const bodyParser = require("body-parser");
 const personRouter = require("./routes/personRoutes.js");
 const menuRouter = require("./routes/menuRoutes.js");
+const PORT = process.env.PORT || 1000;
 
+require("dotenv").config();
 // Body parsing
 app.use(bodyParser.json());
 
@@ -17,8 +18,6 @@ app.get("/", function (req, res) {
 app.use("/person", personRouter);
 app.use("/menu", menuRouter);
 
-// comment added
-
-app.listen(port, () => {
-  console.log(`server is running at port no ${port}`);
+app.listen(PORT, () => {
+  console.log(`server is running at port no ${PORT}`);
 });
