@@ -21,7 +21,7 @@ routes.get("/", async (req, res) => {
     res.status(200).json(menuItems);
   } catch (err) {
     console.error("Error fetching menu items:", err);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({ error: "Internal Server Error aave 6 bhai" });
   }
 });
 
